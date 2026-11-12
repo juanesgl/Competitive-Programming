@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool adj[105][105]
+bool adj[105][105];
 
 void init_m(int n){
-    for (int i = 1; i < n; i ++){
-        for (int j = 1; j < n; j ++){
+    for (int i = 1; i <= n; i ++){
+        for (int j = 1; j <= n; j ++){
             adj[i][j] = false;
         }
     }
@@ -24,10 +24,11 @@ void graph(){
 
 void floyd_warshall(int N){
     for (int k = 1; k <= N; k++){
-        for(int j = 1; j <= N; j++){
-            for (int x = 1; x <= N; x++){
+        for (int i = 1; i <= N; i++){
+            for (int j = 1; j <= N; j++){
                 if (adj[i][k] == true && adj[k][j] == true){
-                adj[i][j] = true;
+                    adj[i][j] = true;
+                }
             }
         }
     }
@@ -46,7 +47,7 @@ void process_queries(int N){
 
         for (int i = 1; i <= N; i++){
             if (adj[start_node][i] == false){
-                cn++:
+                cn++;
                 unreach.push_back(i);
             }
         }
@@ -62,13 +63,16 @@ void process_queries(int N){
     }
 }
 
-
 int main() {
-
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
+    int n;
+    while (cin >> n && n != 0){
+        init_m(n);
+        graph();
+        floyd_warshall(n);
+        process_queries(n);
     }
-
     return 0;
 }
