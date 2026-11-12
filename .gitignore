@@ -1,0 +1,22 @@
+# Compiled binaries
+*.exe
+*.out
+*.app
+
+# Object files and libraries
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+
+# Debug files
+*.pdb
+*.idb
+*.dSYM/
+
+# VS Code / IDE configs (optional)
+.vscode/
+.idea/
