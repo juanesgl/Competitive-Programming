@@ -20,3 +20,8 @@
 # VS Code / IDE configs (optional)
 .vscode/
 .idea/
+
+# Linux binaries (no extension) in problem folders
+UVA/*
+!UVA/*.*
+!UVA/*/
